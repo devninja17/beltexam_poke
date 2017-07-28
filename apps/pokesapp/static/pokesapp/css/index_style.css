@@ -1,0 +1,57 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.wrapper{
+    width: 670px;
+    padding: 20px;
+}
+.register{
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    display: inline-block;
+    width: 280px;
+    border: 2px solid black;
+    padding: 20px;
+}
+h4{
+    margin-bottom: 10px;
+}
+label{
+    display: inline-block;
+    width: 100px;
+    margin-left: 5px;
+}
+input{
+    border: 1px solid black;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+p{
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+input{
+    width: 160px;
+}
+#button{
+    width: 65px;
+    margin-top: 15px;
+    margin-left: 205px;
+    box-shadow: 3px 3px 10px black;
+}
+.login{
+    margin-top: 20px;
+    display: inline-block;
+    width: 280px;
+    border: 2px solid black;
+    padding: 20px;
+    vertical-align: top;
+}
+.error{
+    color: red;
+}
+li{
+    margin-left: 40px;
+}

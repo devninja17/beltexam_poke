@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pokes</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'pokesapp/css/pokes_style.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <a id="logout" href="/logout">Logout</a>
+        <h3>Welcome, {{request.session.user_name}}!</h3>
+        {% if counter > 1 %}
+            <p>{{counter}} people poked you!</p>
+        {% endif %}
+        {% if counter == 1 %}
+            <p>{{counter}} person poked you!</p>
+        {% endif %}
+        <div>
+            <table id="pokes">
+            {% for user in people %}
+                {% if user.pokes_made.count > 0 %}
+                    {% if user.pokes_made.count == 1%}
+                    <tr><td>{{user.name}} poked you {{user.pokes_made.count}} time.</td></tr>
+                    {% endif %}
+                    {% if user.pokes_made.count > 1%}
+                    <tr><td>{{user.name}} poked you {{user.pokes_made.count}} times.</td></tr>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+            </table>
+        </div>
+        <div class="want_to_poke">
+            <h5>People you may want to poke:</h5>
+            <table>
+                <tr>
+                    <th id="name_column">Name</th>
+                    <th id="alias_column">Alias</th>
+                    <th id="email_column">Email Address</th>
+                    <th id="history_column">Poke History</th>
+                    <th id="action_column">Action</th>
+                </tr>
+                {% for user in people %}
+                <tr>
+                    <td>{{user.name}}</td>
+                    <td>{{user.alias}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.pokes_received.count}} pokes</td>
+                    <td>
+                        <form action="/pokes/{{user.id}}" method="POST">
+                            {% csrf_token %}
+                            <input id="button" type="submit" value="Poke!">
+                        </form>   
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+</html>

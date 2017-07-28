@@ -1,0 +1,49 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.wrapper{
+    width: 800px;
+    padding: 20px;
+    /* background-color: gray;  */
+}
+#pokes{
+    margin-top: 30px;
+    border: 2px solid black;
+    width: 400px;
+}
+#logout{
+    float: right;
+}
+h5{
+    margin-top: 30px;
+}
+#name_column{
+    width: 170px;
+}
+#alias_column{
+    width: 120px
+}
+#email_column{
+    width: 190px;
+}
+#history_column{
+    width: 140px
+}
+#action_column{
+    width: 90px
+}
+th{
+    text-align: left;  
+}
+table{
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: 2px solid black;
+}
+#button{
+    box-shadow: 2px 2px 4px black;
+    background-color: lightgreen;
+    padding: 2px;
+    width: 50px;
+}
